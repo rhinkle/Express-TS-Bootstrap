@@ -1,0 +1,24 @@
+{
+  "name": "express-bootstrap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/server.ts",
+  "scripts": {
+    "build-tsc": "tsc",
+    "build": "npm run build-tsc",
+    "start": "nodemon"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "typescript": "^3.9.5"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/express": "^4.17.6",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2"
+  }
+}
