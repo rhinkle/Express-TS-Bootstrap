@@ -2,7 +2,7 @@ import { Container } from "inversify";
 import { HealthCheckController } from "./controller/health-check";
 import TYPES from "./TYPES";
 
-let container = new Container();
+const container = new Container();
 
 container.bind<HealthCheckController>(TYPES.HealthCheckController).to(HealthCheckController);
 

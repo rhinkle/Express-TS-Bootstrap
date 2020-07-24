@@ -4,7 +4,7 @@ import { InversifyExpressServer } from "inversify-express-utils";
 import './controller/health-check';
 import container from "./container";
 
-let server =  new InversifyExpressServer(container);
+const server =  new InversifyExpressServer(container);
 
 server.setConfig((app) => {
     // config settings
@@ -14,5 +14,5 @@ server.setConfig((app) => {
     app.use(bodyParser.json());
 });
 
-let app = server.build();
+const app = server.build();
 export default app;

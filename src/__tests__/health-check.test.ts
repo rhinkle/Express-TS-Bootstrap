@@ -4,7 +4,7 @@ import { expect } from "@jest/globals";
 
 const request = supertest(app);
 
-test('Health Check Controller', async done => {
+test('RouteTest: /', async done => {
     const res: any = await request.get('/');
 
     expect(res.status).toBe(200);
