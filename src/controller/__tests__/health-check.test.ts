@@ -1,6 +1,6 @@
 import supertest from "supertest";
-import app from "../app";
 import { expect } from "@jest/globals";
+import app from "../../app";
 
 const request = supertest(app);
 
