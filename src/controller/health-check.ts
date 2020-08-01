@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
 import { controller, httpGet } from "inversify-express-utils";
 
-@controller('/')
+@controller('/health-check')
 export class HealthCheckController {
 
     @httpGet('/')
     public async index(req: Request, res: Response): Promise<Response> {
         res.json({
-            hello: 'world',
+            status: 'pass',
         });
         return res;
     }
