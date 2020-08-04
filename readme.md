@@ -28,3 +28,9 @@ npm run lint
 ```
 
 ## Todo
+* ~~Add app logger~~
+* Log all requests fo
+* Log all responses
+* Error Handler middleware
+    * https://gist.github.com/zcaceres/2854ef613751563a3b506fabce4501fd
+* config Service/manager

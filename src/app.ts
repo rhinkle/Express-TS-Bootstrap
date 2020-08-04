@@ -7,7 +7,6 @@ import container from "./container";
 const server =  new InversifyExpressServer(container);
 
 server.setConfig((app) => {
-    // config settings
     app.use(bodyParser.urlencoded({
         extended: true
     }));
