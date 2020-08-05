@@ -4,6 +4,7 @@ import container from "../../../container";
 import {ILogger} from "../logger";
 import TYPES from "../../../TYPES";
 import {ConsoleLogger, NullLogger} from "../console-logger";
+
 let subject: NullLogger;
 
 beforeAll(() => {
@@ -24,11 +25,10 @@ describe('Log Test', () => {
         return expect(subject.getLastLogMessage()).toBe('12345');
     });
 
-
-    it('should log cats 123456', () => {
+    it('should log cats 12345', () => {
         expect.assertions(1);
-        subject.cats('12345');
-        return expect(subject.getLastLogMessage()).toBe('12345');
+        subject.cats('54321');
+        return expect(subject.getLastLogMessage()).toBe('54321');
     });
 
     it('should log error 123456', () => {
