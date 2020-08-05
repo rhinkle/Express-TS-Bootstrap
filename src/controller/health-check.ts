@@ -1,4 +1,4 @@
-import {NextFunction, Request, Response} from "express";
+import {Request, Response} from "express";
 import {controller, httpGet} from "inversify-express-utils";
 import {inject} from "inversify";
 import TYPES from "../TYPES";
@@ -12,7 +12,7 @@ export class HealthCheckController {
     ) { }
 
     @httpGet('/')
-    public async index(req: Request, res: Response, next: NextFunction): Promise<Response> {
+    public async index(req: Request, res: Response): Promise<Response> {
         this.log.info('Request received.');
         res.json({status: 'pass'});
         return res;
