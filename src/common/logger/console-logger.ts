@@ -25,7 +25,7 @@ export class ConsoleLogger implements ILogger {
         this.writeTo(message);
     }
 
-    public warn(message: string): void {
+    public cats(message: string): void {
         this.writeTo(message);
     }
 
@@ -49,15 +49,15 @@ export class NullLogger implements ILogger {
         this.lastLogMessage = message;
     }
 
-    public warn(message: string): void {
-        throw new Error("Method not implemented.");
+    public cats(message: string): void {
+        this.lastLogMessage = message;
     }
 
     public error(message: string): void {
-        throw new Error("Method not implemented.");
+        this.lastLogMessage = message;
     }
 
-    public getLastLogMessage() {
+    public getLastLogMessage(): string {
         return this.lastLogMessage;
     }
 }
