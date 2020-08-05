@@ -29,6 +29,7 @@ npm run lint
 
 ## Todo
 * ~~Add app logger~~
+* Add in github and code merge gate checks.
 * Log all requests fo
 * Log all responses
 * Error Handler middleware
