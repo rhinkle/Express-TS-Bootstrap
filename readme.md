@@ -29,9 +29,12 @@ npm run lint
 
 ## Todo
 * ~~Add app logger~~
-* Add in github and code merge gate checks.
-* Log all requests fo
+* ~~Add in github and code merge gate checks.~~
+* ~~Switched from master to mainline~~
+* Use NullableLogger within HealthCheckController
+* Log all requests
 * Log all responses
+* Log with optional context data
 * Error Handler middleware
     * https://gist.github.com/zcaceres/2854ef613751563a3b506fabce4501fd
 * config Service/manager
