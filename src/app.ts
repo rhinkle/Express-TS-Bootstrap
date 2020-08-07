@@ -2,16 +2,27 @@ import "reflect-metadata";
 import bodyParser from 'body-parser';
 import { InversifyExpressServer } from "inversify-express-utils";
 import './controller/health-check';
-import container from "./container";
+import {Container} from "inversify";
+import e from "express";
 
-const server =  new InversifyExpressServer(container);
+export class App {
+    private _server: InversifyExpressServer;
 
-server.setConfig((app) => {
-    app.use(bodyParser.urlencoded({
-        extended: true
-    }));
-    app.use(bodyParser.json());
-});
+    constructor(container: Container) {
+        this._server =  new InversifyExpressServer(container);
+        this.config();
+    }
 
-const app = server.build();
-export default app;
+    public build(): e.Application {
+        return this._server.build();
+    }
+
+    private config() {
+        this._server.setConfig((app) => {
+            app.use(bodyParser.urlencoded({
+                extended: true
+            }));
+            app.use(bodyParser.json());
+        });
+    }
+}

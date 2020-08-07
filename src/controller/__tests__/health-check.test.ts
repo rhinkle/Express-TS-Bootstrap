@@ -1,10 +1,21 @@
-import supertest from "supertest";
 import { expect } from "@jest/globals";
-import app from "../../app";
-
-const request = supertest(app);
+import {App} from "../../app";
+import {Container} from "inversify";
+import {HealthCheckController} from "../health-check";
+import TYPES from "../../TYPES";
+import supertest = require("supertest");
+import {ILogger} from "../../common/logger/logger";
+import {ConsoleLogger} from "../../common/logger/console-logger";
 
 test('RouteTest: /health-check', async done => {
+    //This is for route tests. Any other test not using supertest wont need this.
+    const childContainer = new Container();
+    childContainer.bind<HealthCheckController>(TYPES.HealthCheckController).to(HealthCheckController);
+    childContainer.bind<ILogger>(TYPES.ConsoleLogger).toConstantValue(ConsoleLogger.createNull());
+
+    const app = new App(childContainer).build();
+    const request = supertest(app);
+
     const res: any = await request.get('/health-check');
     expect(res.body).toStrictEqual({status: 'pass'});
     expect(res.status).toBe(200);
