@@ -32,7 +32,7 @@ npm run lint
 * ~~Add in github and code merge gate checks.~~
 * ~~Switched from master to mainline~~
 * ~~Use NullableLogger within HealthCheckController~~
-* NYC Code coverage
+* ~~Code coverage~~
 * Log all requests
 * Log all responses
 * Log with optional context data
