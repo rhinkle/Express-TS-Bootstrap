@@ -7,8 +7,8 @@
     "build-tsc": "tsc",
     "build": "npm run lint; npm run build-tsc",
     "start": "nodemon",
-    "test:clear": "jest --clearCache",
     "test": "jest",
+    "test-cov": "jest --coverage",
     "lint": "eslint . --ext .ts"
   },
   "author": "",

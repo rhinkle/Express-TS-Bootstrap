@@ -38,6 +38,7 @@ export class ConsoleLogger implements ILogger {
     }
 }
 
+// This will get flagged as not covered by tests, however we will end up using this in other classes.
 export class NullLogger implements ILogger {
     private lastLogMessage: string;
 
